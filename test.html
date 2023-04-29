@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        
+        
+    </body>
+    <script>
+        
+        function myRemove() {
+      var param = document.getElementById('parent')
+      var child = document.getElementById('P-two')
+      var child4 = document.getElementById('P-four')
+
+      if (child) {
+        param.removeChild(child)
+      } else {
+        // add child
+        var child = document.createElement('p')
+        child.setAttribute('id', 'P-two')
+        child.innerHTML = 'This is child 2'
+        param.appendChild(child)
+        
+      }
+    }
+    </script>
+</html>
+

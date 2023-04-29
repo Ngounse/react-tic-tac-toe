@@ -1,0 +1,132 @@
+
+.reset{
+    width: 100px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    /* make it look 3D popup */
+    box-shadow: 0px 0px 10px 0px #000000;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
+}
+.reset:hover{
+    background-color: #00ffffca;
+    color: #fff;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.board-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.status {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    /* make it look 3D popup */
+    box-shadow: 0px 0px 10px 0px #000000;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 34px;
+    /* make it look 3D popup */
+    box-shadow: 0px 0px 10px 0px #000000;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.square.X{
+    color: #ff0000;
+}
+.square.O{
+    color: #0000ff;
+}
+.square.X:hover{
+    background-color: #ff00008c;
+    color: #fff;
+}
+.square.O:hover{
+    background-color: #0000ff8c;
+    color: #fff;
+}
+
+.square:hover{
+    background-color: #00ffffca;
+    color: #fff;
+    box-shadow: 0px 0px 10px 0px #000000;
+    
+}
+
+.square:active{
+    background-color: #00ffff;
+}
+
+/* .square.winner.X{
+    background-color: #ff00008c;
+    color: #fff;
+}
+.square.winner.O{
+    background-color: #0000ff8c;
+    color: #fff;
+} */
+
+.square.winner{
+    background: linear-gradient(238deg, #fd8800, #fd008f, #9700fd, #003dfd, #05c7e6, #4bd58d);
+    background-size: 1200% 1200%;
+    -webkit-animation: rainbow 30s ease infinite;
+    animation: rainbow 30s ease infinite;
+    color: #fff;
+}
+
+@-webkit-keyframes rainbow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+  @keyframes rainbow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+  
+.square.winner:active{
+    background-color: #00ffff;
+}
+
+.bot{
+    width: 100px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    /* make it look 3D popup */
+    box-shadow: 0px 0px 10px 0px #000000;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
+}

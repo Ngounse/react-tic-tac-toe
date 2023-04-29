@@ -55,15 +55,6 @@ export function Borad() {
     setXIsNext(true);
   };
 
-  if (isBot && !xIsNext) {
-    setTimeout(() => {
-      const nextSquares = squares.slice();
-      nextSquares[BotMove(squares)] = "O";
-      setSquares(nextSquares);
-      setXIsNext(!xIsNext);
-    }, 1000);
-  }
-
   return (
     <>
       <div className={`status `}>{status}</div>
@@ -73,6 +64,7 @@ export function Borad() {
         </button>
       </div>
       {board.map((row, i) => {
+        console.log("row:::", i);
         return (
           <div className="board-row" key={i}>
             {row.map((col, j) => {
@@ -133,55 +125,5 @@ function calculateWinner(squares) {
   }
   return null;
 }
-
-const BotMove = (squares) => {
-  let bestScore = -Infinity;
-  let move;
-  for (let i = 0; i < squares.length; i++) {
-    if (squares[i] === null) {
-      squares[i] = "O";
-      let score = minimax(squares, 0, false);
-      squares[i] = null;
-      if (score > bestScore) {
-        bestScore = score;
-        move = i;
-      }
-    }
-  }
-  return move;
-};
-
-const minimax = (squares, depth, isMaximizing) => {
-  let result = calculateWinner(squares);
-  if (result) {
-    return result.winner === "O" ? 10 - depth : depth - 10;
-  }
-  if (squares.every((square) => square !== null)) {
-    return 0;
-  }
-  if (isMaximizing) {
-    let bestScore = -Infinity;
-    for (let i = 0; i < squares.length; i++) {
-      if (squares[i] === null) {
-        squares[i] = "O";
-        let score = minimax(squares, depth + 1, false);
-        squares[i] = null;
-        bestScore = Math.max(score, bestScore);
-      }
-    }
-    return bestScore;
-  } else {
-    let bestScore = Infinity;
-    for (let i = 0; i < squares.length; i++) {
-      if (squares[i] === null) {
-        squares[i] = "X";
-        let score = minimax(squares, depth + 1, true);
-        squares[i] = null;
-        bestScore = Math.min(score, bestScore);
-      }
-    }
-    return bestScore;
-  }
-};
 
 export default App;
